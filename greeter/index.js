@@ -18,3 +18,8 @@ GreeterService.prototype.eventHandlers.onLanuch = helloResponseFunction;
 GreeterService.prototype.intentHandlers = {
     'HelloWorldIntent' : helloResponseFunction
 };
+
+exports.handler = function(event, context){
+    var greeterService = new GreeterService();
+    greeterService.execute(event, context);
+};
